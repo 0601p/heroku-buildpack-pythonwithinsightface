@@ -41,7 +41,8 @@ if [ ! "$SKIP_PIP_INSTALL" ]; then
     fi
     
     echo -e "\ninsightface==0.6.2" > tmp.txt
-    cat requirements.txt tmp.txt > .heroku/python/requirements-declared.txt
+    cat requirements.txt tmp.txt > requirements.txt
+    cp requirements.txt .heroku/python/requirements-declared.txt
     /app/.heroku/python/bin/pip freeze --disable-pip-version-check > .heroku/python/requirements-installed.txt
     
     rm tmp.txt
