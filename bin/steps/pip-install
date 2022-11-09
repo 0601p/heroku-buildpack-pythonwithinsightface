@@ -32,8 +32,8 @@ if [ ! "$SKIP_PIP_INSTALL" ]; then
     PIP_STATUS="${PIPESTATUS[0]}"
     
     /app/.heroku/python/bin/pip install insightface==0.6.2
-    sudo apt install libgl1-mesa-glx
-    sudo apt=get install -y libsm6 libxext6 libxrender-dev
+    RUN apt-get update
+    RUN apt-get -y install libgl1-mesa-glx
     set -e
     show-warnings
 
