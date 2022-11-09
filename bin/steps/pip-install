@@ -40,8 +40,7 @@ if [ ! "$SKIP_PIP_INSTALL" ]; then
         exit 1
     fi
     
-    cat requirements.txt "insightface==0.6.2" > requirements_insightfaceadded.txt
-    cp requirements_insightfaceadded.txt .heroku/python/requirements-declared.txt
+    cp requirements.txt .heroku/python/requirements-declared.txt
     /app/.heroku/python/bin/pip freeze --disable-pip-version-check > .heroku/python/requirements-installed.txt
 
     # Install test dependencies, for CI.
